@@ -1,10 +1,11 @@
 import mongoose from "mongoose";
 import db from '../models';
 
-mongoose.connect('mongodb://localhost/workout', {
+mongoose.connect('mongodb://localhost/workout_db', {
   useNewUrlParser: true,
   useFindAndModify: false,
-  useUnifiedTopology: true,
+  useCreateIndex: true,
+  useUnifiedTopology: true
 });
 
 const workoutSeed = [
