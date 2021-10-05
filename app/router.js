@@ -28,6 +28,19 @@ router.get("/workouts", async(_,res)=>{
   }
 });
 
+router.put("/workouts/:id", async (req, res) => {
+  try {
+
+    // Validated in the "update" section of the controller.js
+      const updatedWorkout = await workoutController.update(req.params.id, req.body);
+      res.status(200).send(updatedWorkout);
+  }
+  catch (error) {
+    res.status(404).json(error.message);
+  }
+}
+);
+
 router.post("/workouts", async(req,res)=>{
   try {
     const validatedWorkout = workoutModel.createWorkout(req.body);
