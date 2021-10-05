@@ -38,11 +38,17 @@ const validateNum = (state)=>({
 });
 
 export default {
-  createExercise(){
+  createExercise(workout, newExercise){
     const errors = validate(newExercise);
     if (errors.length){
       throw new Error(`User error: ${errors.join(", ")}`);
     }
-    return {}
-
-}
+    return {
+      ...workout,
+      exercises:[
+        ...workout.exercises,
+        {...newExercise, ...validateNum(newExercise)},
+      ],
+    }
+  }
+};
