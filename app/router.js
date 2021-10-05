@@ -65,4 +65,13 @@ router.post("/workouts", async (req,res)=>{
   }
 });
 
+router.delete("/workouts/", async (req, res) => {
+  try {
+    await workoutController.deleteAll();
+    res.status(204).send();
+  } catch (error) {
+    res.status(404).json(error.message);
+  }
+});
+
 export default router;
