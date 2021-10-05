@@ -51,7 +51,7 @@ router.put("/workouts/:id", async (req, res) => {
 }
 );
 
-router.post("/workouts", async (req,res)=>{
+router.post("/workouts", async (__, res)=>{
   try {
     const validatedWorkout = workoutModel.createWorkout(req.body);
     const newWorkout = await workoutController.add(validatedWorkout);
