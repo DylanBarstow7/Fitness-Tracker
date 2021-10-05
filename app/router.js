@@ -14,7 +14,7 @@ router.get("/workouts", async (_,res)=>{
   }
 });
 
-router.get("/workouts", async(_,res)=>{
+router.get("/workouts", async (_,res)=>{
   try {
     const validatedWorkout = workoutModel.createWorkout(req.body);
     const newWorkout = await workoutController.add(validatedWorkout);
@@ -25,6 +25,16 @@ router.get("/workouts", async(_,res)=>{
     } else {
       res.status(500).send(error.message);
     }
+  }
+});
+
+// Requests 'workouts' from 
+router.get("/workouts/range", async (_,res)=>{
+  try {
+    const workouts = await workoutController.show();
+    res.json(workouts);
+  } catch (err){
+    res.status(500).json({message:err.message});
   }
 });
 
@@ -41,7 +51,7 @@ router.put("/workouts/:id", async (req, res) => {
 }
 );
 
-router.post("/workouts", async(req,res)=>{
+router.post("/workouts", async (req,res)=>{
   try {
     const validatedWorkout = workoutModel.createWorkout(req.body);
     const newWorkout = await workoutController.add(validatedWorkout);
