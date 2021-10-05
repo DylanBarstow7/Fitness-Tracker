@@ -6,8 +6,8 @@
 ## Table of Contents
 
 - [Description](#Description)
+- [Live Deployment](#LiveDeployment)
 - [Images](#Images)
-- [Live Deployment](#Live Deployment)
 - [Installation](#Installation)
 - [Usage](#Usage)
 - [Questions / Contacts](#Contacts)
@@ -19,26 +19,31 @@
 This week we were tasked with created the back end for an exercise app using mongoDB.  When this page loads you are presented with the stats from your most recent workout.  You are then able to create a new workout or to add exercises to the current workout. Once the data is input, you are able to go to the dashboard page and see charts containing the total weight and duration for the last 7 workouts.
 
 
+## Live Deployment
+
+Live Heroku Deployment: https://stormy-plateau-54951.herokuapp.com/?id=615bed6785bf98a0f544ac18
+
+
 ## Images
 Below is the homepage.  Stats from the last clocked workout are shown here.  There are also options to create a new workout or add a new exercise to the current one.
 ![alt text](https://github.com/DylanBarstow7/Fitness-Tracker/blob/master/public/img/fitnessTrackerHome.PNG)
 
+
 New workout page.  You begin by choosing an exercise type from the drop down menu.
 ![alt text](https://github.com/DylanBarstow7/Fitness-Tracker/blob/master/public/img/FitnessTrackerNewExercise.PNG)
+
 
 If you chose a new resistance workout, this is the next page you'll see.
 ![alt text](https://github.com/DylanBarstow7/Fitness-Tracker/blob/master/public/img/FitnessTrackerNewResistanceExercise.PNG)
 
+
 If you chose a new cardio workout, then this is the next page you'll see.
 ![alt text](https://github.com/DylanBarstow7/Fitness-Tracker/blob/master/public/img/FitnessTrackerNewCardioExercise.PNG)
+
 
 This dashboard tracks the total weight lifted in pounds as well as the workout duration in minutes.
 ![alt text](https://github.com/DylanBarstow7/Fitness-Tracker/blob/master/public/img/fitnessTrackerDashboard.PNG)
 
-
-## Live Deployment
-
-Live Heroku Deployment: https://stormy-plateau-54951.herokuapp.com/?id=615bed6785bf98a0f544ac18
 
 
 ## Installation
