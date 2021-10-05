@@ -20,3 +20,10 @@ export default {
       return workoutController.replaceOne({_id:ObjectId(id)},updatedWorkout);
     },
 };
+
+//   create() {
+//     return notesCollection.insertOne(newNote);
+//   },
+//   show() {
+//     return notesCollection.findOne(ObjectId(id));
+//   },
