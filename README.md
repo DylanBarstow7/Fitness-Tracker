@@ -19,7 +19,7 @@
 This week we were tasked with created the back end for an exercise app using mongoDB.  When this page loads you are presented with the stats from your most recent workout.  You are then able to create a new workout or to add exercises to the current workout. Once the data is input, you are able to go to the dashboard page and see charts containing the total weight and duration for the last 7 workouts.
 
 
-## LiveDeployment
+## Live Deployment
 
 Live Heroku Deployment: https://stormy-plateau-54951.herokuapp.com/?id=615bed6785bf98a0f544ac18
 
