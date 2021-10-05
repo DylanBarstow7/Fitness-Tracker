@@ -14,18 +14,37 @@ export default {
       },]).toArray()
       return workouts;
     },
-    // async update method which includes ID & updated exercise
+    // Async update method that includes ID & updated exercise
     async update(id, newExercise) {
-      // Find the desired workout by finding through the ID
+      // Finding desired workout by searching the ID
       const workoutById = await workoutController.findOne({_id:ObjectId(id)});
       const updatedWorkout = workoutModel.createExercise(workoutById,newExercise);
       return workoutController.replaceOne({_id:ObjectId(id)},updatedWorkout);
     },
-};
-
-//   create() {
-//     return notesCollection.insertOne(newNote);
-//   },
-//   show() {
-//     return notesCollection.findOne(ObjectId(id));
-//   },
+    create() {
+      const date = new Date();
+      return workoutController.insertOne(
+        {day:date, exercises:[]}
+      )
+    },
+    show(){
+      const workouts = workoutController
+      .aggregate([
+        // Orders the elements from most recent IDs to oldest IDs
+        {$sort:{_id:-1}},
+        // Limits output to 10 most recent entries
+        {$limit:10},
+        {
+          $addFields: {
+            totalDuration: { $sum: "$exercises.duration" },
+            totalWeight: { $sum: "$exercises.weight" }
+          }
+        },
+        // Sort the most recent IDs from oldest to newest
+        {$sort:{_id:1}},
+      ]).toArray();
+      return workouts;
+  
+    }
+  };
+  
