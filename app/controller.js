@@ -1,7 +1,6 @@
 import { ObjectId } from "mongodb";
 import client from "./loader.js";
 import workoutModel from "./model.js"
-
 const workoutController = client.db("workout_db").collection("workouts");
 
 export default {
@@ -44,7 +43,5 @@ export default {
         {$sort:{_id:1}},
       ]).toArray();
       return workouts;
-  
     }
-  };
-  
+};
